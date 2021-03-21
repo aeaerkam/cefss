@@ -1,0 +1,34 @@
+% clear all
+% %close all
+% if isvalid(M)&&isvalid(N)
+% else
+% M = 50;
+% N = 15;
+% end
+search = 0;
+toggle_smooth_flattop=1.05;
+%%%%%%%%%%%%%%%%%%%%%%%%
+if isvalid(hTogg_flattop)
+toggle_smooth_flattop=hTogg_flattop.Value;
+end
+
+w0 = 2*pi*64e6;
+Cds = 0e-12;
+Gon = 10;
+Goff = 0.0005;
+Lch = 5e-6;
+
+Cp = 1140e-12;  % optimal
+Cs=9.2839e-12;  % optimal 
+% syms cp   % optimization variable Cp
+% syms cs   % optization var.  Cs
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+if isvalid(hs)
+Cs=hs.Value;
+end
+%%%%%%%%%%%%%%%%%%%%%%
+if isvalid(hp)
+Cp=hp.Value;
+end
